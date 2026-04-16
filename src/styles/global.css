@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+
+@theme {
+  /* Geist font stack */
+  --font-sans: "Geist Variable", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Fira Code", monospace;
+
+  /* Color tokens — Vercel DNA + GTH navy */
+  --color-canvas: #ffffff;
+  --color-navy: #090e1a;
+  --color-navy-mid: #111827;
+  --color-ink: #171717;
+  --color-ink-secondary: #4d4d4d;
+  --color-ink-tertiary: #888888;
+  --color-border: rgba(0,0,0,0.08);
+  --color-surface: #fafafa;
+  --color-blue: #2563eb;
+  --color-blue-light: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-feature-settings: "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* Shadow-as-border — Vercel signature technique */
+.card-ring {
+  box-shadow:
+    rgba(0,0,0,0.08) 0px 0px 0px 1px,
+    rgba(0,0,0,0.04) 0px 2px 2px,
+    rgba(0,0,0,0.04) 0px 8px 8px -8px,
+    #fafafa 0px 0px 0px 1px inset;
+}
+
+.card-ring-dark {
+  box-shadow:
+    rgba(255,255,255,0.08) 0px 0px 0px 1px,
+    rgba(0,0,0,0.4) 0px 8px 32px -8px;
+}
+
+/* Scroll counter animation */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count {
+  animation: count-up 0.6s ease forwards;
+}
+
+/* Hero ambient glow — slow drift */
+@keyframes ambient-drift {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.06; }
+  50%  { transform: translate(-48%, -52%) scale(1.1); opacity: 0.09; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.06; }
+}
+
+.hero-glow {
+  animation: ambient-drift 12s ease-in-out infinite;
+}
+
+/* Fade-in-up for hero content */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow { animation: fade-up 0.6s ease forwards; }
+.hero-headline { animation: fade-up 0.6s 0.1s ease both; }
+.hero-sub      { animation: fade-up 0.6s 0.2s ease both; }
+.hero-ctas     { animation: fade-up 0.6s 0.3s ease both; }
+
+/* Nav scroll behavior */
+.nav-scrolled {
+  background: rgba(255,255,255,0.92) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: rgba(0,0,0,0.06) 0px 1px 0px;
+}
+
+/* Tax card hover */
+.tax-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tax-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    rgba(0,0,0,0.1) 0px 0px 0px 1px,
+    rgba(0,0,0,0.08) 0px 8px 24px -4px,
+    #fafafa 0px 0px 0px 1px inset;
+}
+
+/* Process timeline connector */
+.process-connector {
+  position: absolute;
+  top: 28px;
+  left: calc(50% + 40px);
+  right: calc(-50% + 40px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(37,99,235,0.4), rgba(37,99,235,0.1));
+}
+
+/* ─── Scroll-reveal ─────────────────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children (for grids) */
+[data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal-group].revealed > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+[data-reveal-group].revealed > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.08s; }
+[data-reveal-group].revealed > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.16s; }
+[data-reveal-group].revealed > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
+[data-reveal-group].revealed > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.32s; }
+[data-reveal-group].revealed > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
+
+/* ─── Icon ring containers ──────────────────────────────────── */
+.icon-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(37,99,235,0.07);
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.icon-ring-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+/* ─── Eyebrow pill ──────────────────────────────────────────── */
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(37,99,235,0.08);
+  border: 1px solid rgba(37,99,235,0.15);
+  border-radius: 9999px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── Trust badge strip ─────────────────────────────────────── */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  font-weight: 500;
+}

@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Layout
+  title="Book a Conversation"
+  description="One honest conversation. 45 minutes. No prep required. Find out whether you have a structural revenue problem — and what to do about it."
+>
+  <Nav />
+
+  <!-- Page Hero -->
+  <section class="bg-[#090e1a] pt-28 sm:pt-32 pb-16 sm:pb-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-[1fr_280px] gap-12 lg:gap-16 items-end">
+        <div>
+          <p class="hero-eyebrow text-[11px] sm:text-[12px] font-medium text-white/30 uppercase tracking-[0.1em] mb-5">Book a Conversation</p>
+          <h1 class="hero-headline text-[36px] sm:text-[48px] md:text-[60px] font-semibold tracking-[-0.03em] text-white leading-[1.05] mb-6">
+            One honest<br />conversation.
+          </h1>
+          <p class="hero-sub text-[16px] sm:text-[18px] text-white/60 leading-relaxed max-w-xl">
+            45 minutes. No pitch, no prep required. You'll leave knowing whether you have a
+            structural problem — and if so, where to focus first.
+          </p>
+        </div>
+        <!-- Trust signals -->
+        <div class="hero-ctas flex flex-col gap-3 pb-2">
+          {[
+            { label: "Free", sub: "No cost, no commitment", icon: "lock" },
+            { label: "45 min", sub: "Direct, focused conversation", icon: "calendar" },
+            { label: "Honest", sub: "If not a fit, you'll know fast", icon: "check" },
+          ].map(item => (
+            <div class="card-ring-dark rounded-[10px] px-4 sm:px-5 py-4 flex items-center gap-4">
+              <div class="icon-ring-dark">
+                <Icon name={item.icon} size={16} />
+              </div>
+              <div>
+                <div class="text-[15px] sm:text-[16px] font-semibold text-white leading-none mb-0.5">{item.label}</div>
+                <div class="text-[11px] sm:text-[12px] text-white/30">{item.sub}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-16">
+      <div class="grid md:grid-cols-[1fr_400px] gap-10 sm:gap-12 items-start">
+
+        <!-- Left: What to expect -->
+        <div data-reveal>
+          <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-[-0.025em] text-[#171717] mb-6">What to expect</h2>
+          <div class="flex flex-col gap-5 sm:gap-6 mb-8 sm:mb-10">
+            {[
+              {
+                time: "0–10 min",
+                title: "Your situation",
+                body: "You describe what's happening — where revenue is stuck, what you've tried, what the business looks like. No structure needed."
+              },
+              {
+                time: "10–35 min",
+                title: "Diagnostic questions",
+                body: "John asks specific questions to understand the structure of your revenue motion — not surface-level, but the things that reveal whether the problem is structural or something else."
+              },
+              {
+                time: "35–45 min",
+                title: "Honest assessment",
+                body: "You get a direct assessment: whether this looks like a structural problem, what type, and whether this engagement is the right fit. If it's not, he'll tell you quickly — and often tell you what to try instead."
+              },
+            ].map(item => (
+              <div class="flex gap-4 sm:gap-5">
+                <div class="flex-shrink-0 pt-0.5">
+                  <span class="text-[10px] sm:text-[11px] font-mono font-medium text-[#888888]">{item.time}</span>
+                </div>
+                <div class="border-l border-black/[0.08] pl-4 sm:pl-5">
+                  <h3 class="text-[15px] sm:text-[16px] font-semibold text-[#171717] mb-2">{item.title}</h3>
+                  <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Trust signals -->
+          <div class="card-ring rounded-[10px] p-5 sm:p-6 bg-[#fafafa]">
+            <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4 sm:mb-5">A few things to know</p>
+            <div class="flex flex-col gap-3 sm:gap-4">
+              {[
+                "This is not a sales call. There's no pitch.",
+                "If we're not a fit, you'll know by minute 30.",
+                "No prep needed — bring the problem as it is.",
+                "You'll get honest perspective, not a soft sell.",
+                "If John can't help, he'll say so — and usually suggest who can.",
+              ].map(item => (
+                <div class="flex items-start gap-3">
+                  <Icon name="check" size={16} class="flex-shrink-0 mt-0.5" />
+                  <span class="text-[13px] sm:text-[14px] text-[#4d4d4d]">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Calendly embed -->
+        <div class="sticky top-24">
+          <div class="card-ring rounded-[12px] overflow-hidden bg-white">
+            <!-- Calendly inline widget -->
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/john-growththatholds/revenue-conversation?hide_event_type_details=1&hide_gdpr_banner=1"
+              style="min-width:280px;height:700px;"
+            ></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          </div>
+
+          <!-- Fallback / direct link -->
+          <div class="mt-4 text-center">
+            <p class="text-[11px] sm:text-[12px] text-[#888888] mb-2">Calendar not loading?</p>
+            <a
+              href="mailto:john@growththatholds.com"
+              class="text-[12px] sm:text-[13px] font-medium text-[#2563eb] hover:opacity-70 transition-opacity"
+            >
+              Email john@growththatholds.com directly
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-[#fafafa] border-y border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="mb-8 sm:mb-10" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">Common Questions</p>
+        <h2 class="text-[26px] sm:text-[32px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1]">
+          Before you book
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl" data-reveal-group>
+        {[
+          {
+            q: "Do I need to prepare anything?",
+            a: "No. Bring your situation as it is. If you want to pull together some data (pipeline numbers, NRR, churn rates) that's useful, but not required."
+          },
+          {
+            q: "Is there a cost?",
+            a: "The initial conversation is free. You'll know what an engagement looks like and what it costs after the call — not before."
+          },
+          {
+            q: "How long does a full engagement take?",
+            a: "The audit and diagnosis phase is typically 5–6 weeks. Implementation varies depending on what needs to be fixed — from 6 weeks to 4 months."
+          },
+          {
+            q: "What size companies do you work with?",
+            a: "B2B companies in the $3M–$50M revenue range. This is where structural problems are most visible — and where fixing them has the most impact."
+          },
+          {
+            q: "What if we're not a fit?",
+            a: "John will tell you directly and quickly — usually by the 30-minute mark. He often knows who could help and will point you there."
+          },
+          {
+            q: "How many clients does John work with at once?",
+            a: "A small number — typically 2–3 active engagements. The depth of involvement requires focus, not volume."
+          },
+        ].map(item => (
+          <div class="card-ring rounded-[10px] p-5 sm:p-6 bg-white">
+            <h3 class="text-[14px] sm:text-[15px] font-semibold text-[#171717] mb-3">{item.q}</h3>
+            <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

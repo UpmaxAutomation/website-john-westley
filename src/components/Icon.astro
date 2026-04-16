@@ -1,0 +1,51 @@
+---
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+const { name, size = 24, class: className = "" } = Astro.props;
+
+const icons: Record<string, string> = {
+  // Structural Taxes
+  "broken-bridge": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M2 12h7M15 12h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 8v8M15 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2" opacity="0.4"/><circle cx="9" cy="12" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="15" cy="12" r="1.5" fill="currentColor" opacity="0.5"/></svg>`,
+
+  "leaky-bucket": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M7 6h10l-1.5 10H8.5L7 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 6h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 17.5v3M14 17.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><circle cx="10" cy="21.5" r="0.75" fill="currentColor" opacity="0.4"/><circle cx="14" cy="21.5" r="0.75" fill="currentColor" opacity="0.4"/></svg>`,
+
+  "invisible-ceiling": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M4 6h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2"/><path d="M12 20v-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 9l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 7l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/></svg>`,
+
+  "expansion-gap": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M5 12h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2" opacity="0.3"/><path d="M5 12c0-4 3-6 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5 12c0 4 3 6 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><path d="M19 7l-1.5 1.5M19 17l-1.5-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+
+  "conversion-drag": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M8 3h8l-1 7h-6L8 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10h6l-1 7H10L9 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.6"/><path d="M10 17l-1 4h6l-1-4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.3"/><path d="M7 3h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+
+  "misaligned-motion": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 4v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 20l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M16 16V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><path d="M2 14h10M12 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/></svg>`,
+
+  // Process steps
+  "audit": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
+
+  "diagnose": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M3 12h3l3-7 4 14 3-9 2 4 3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+
+  "rebuild": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94L14.7 6.3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+
+  // General
+  "arrow-right": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+
+  "check": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><circle cx="12" cy="12" r="10" fill="#dcfce7"/><path d="M8 12l3 3 5-5" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+
+  "x": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><circle cx="12" cy="12" r="10" fill="#fee2e2"/><path d="M9 9l6 6M15 9l-6 6" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+
+  "star": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="currentColor"/></svg>`,
+
+  "calendar": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+
+  "users": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 20c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="8" r="2.5" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><path d="M21 20c0-2.76-1.79-5.11-4.26-5.83" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/></svg>`,
+
+  "chart": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 20v-8M11 20v-5M15 20v-11M19 20V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+
+  "lock": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 11V7a4 4 0 018 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>`,
+
+  "trending-up": `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><path d="M22 7l-8.5 8.5-5-5L2 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+};
+---
+
+<Fragment set:html={icons[name] ?? `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" class="${className}"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>`} />

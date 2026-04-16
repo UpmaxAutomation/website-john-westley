@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Layout
+  title="Where AI Fits"
+  description="AI is a powerful accelerant — but it accelerates the motion you already have. If that motion has structural problems, AI makes them faster."
+>
+  <Nav />
+
+  <!-- Page Hero -->
+  <section class="bg-[#090e1a] pt-28 sm:pt-32 pb-16 sm:pb-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-[1fr_260px] gap-12 lg:gap-16 items-end">
+        <div>
+          <p class="hero-eyebrow text-[11px] sm:text-[12px] font-medium text-white/30 uppercase tracking-[0.1em] mb-5">Where AI Fits</p>
+          <h1 class="hero-headline text-[36px] sm:text-[48px] md:text-[60px] font-semibold tracking-[-0.03em] text-white leading-[1.05] max-w-3xl mb-6">
+            AI accelerates.<br />
+            <span class="text-white/35">It doesn't fix.</span>
+          </h1>
+          <p class="hero-sub text-[16px] sm:text-[18px] text-white/60 leading-relaxed max-w-2xl">
+            AI tools are genuinely powerful for revenue teams. But they amplify the motion you already have —
+            including its structural problems. Before you accelerate, you need to know what you're accelerating.
+          </p>
+        </div>
+        <!-- Context callout -->
+        <div class="hero-ctas flex flex-col gap-3 pb-2">
+          <div class="card-ring-dark rounded-[10px] px-5 sm:px-6 py-5">
+            <div class="text-[12px] sm:text-[13px] font-medium text-white/50 mb-3 uppercase tracking-[0.06em]">The sequence</div>
+            <div class="flex flex-col gap-3">
+              {[
+                { step: "Fix the structure", active: true, icon: "rebuild" },
+                { step: "Instrument it", active: false, icon: "chart" },
+                { step: "Accelerate with AI", active: false, icon: "trending-up" },
+              ].map((item, i) => (
+                <div class="flex items-center gap-3">
+                  <div class={`icon-ring-dark ${item.active ? 'opacity-100' : 'opacity-30'}`}>
+                    <Icon name={item.icon} size={16} />
+                  </div>
+                  <span class={`text-[14px] ${item.active ? 'text-white font-medium' : 'text-white/35'}`}>{item.step}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Reality -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="grid md:grid-cols-2 gap-12 sm:gap-16 items-start">
+        <div data-reveal>
+          <h2 class="text-[26px] sm:text-[32px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] mb-6">
+            The honest truth about AI in your revenue motion
+          </h2>
+          <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-5">
+            Every month there's a new AI tool promising to fix your pipeline, personalize your outreach,
+            or automate your follow-up. Some of them are genuinely useful. Some are expensive distractions.
+          </p>
+          <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-5">
+            The problem isn't the tools. The problem is that AI gets layered on top of a broken motion.
+            If your leads aren't converting because of a handoff problem, AI-personalized emails
+            just get more of them to a broken handoff faster.
+          </p>
+          <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed">
+            AI is an accelerant. The question is: what are you accelerating?
+          </p>
+        </div>
+        <div class="card-ring rounded-[12px] p-6 sm:p-8 bg-white" data-reveal data-reveal-delay="120">
+          <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-5">What AI can and can't do</p>
+          <div class="flex flex-col gap-6">
+            <div>
+              <p class="text-[13px] font-semibold text-[#16a34a] mb-3">AI genuinely helps with</p>
+              <div class="flex flex-col gap-2">
+                {[
+                  "Scaling outreach and personalization",
+                  "Summarizing calls and notes",
+                  "Drafting proposals and follow-ups",
+                  "Analyzing data and patterns",
+                  "Onboarding content and training",
+                ].map(i => (
+                  <div class="flex items-start gap-2">
+                    <Icon name="check" size={14} />
+                    <span class="text-[13px] sm:text-[14px] text-[#4d4d4d]">{i}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div class="pt-5 border-t border-black/[0.06]">
+              <p class="text-[13px] font-semibold text-[#dc2626] mb-3">AI can't fix</p>
+              <div class="flex flex-col gap-2">
+                {[
+                  "Broken handoffs between teams",
+                  "Structural misalignment in your ICP",
+                  "The wrong conversion architecture",
+                  "Customers leaving for structural reasons",
+                  "An expansion motion that doesn't exist",
+                ].map(i => (
+                  <div class="flex items-start gap-2">
+                    <Icon name="x" size={14} />
+                    <span class="text-[13px] sm:text-[14px] text-[#4d4d4d]">{i}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Right Order -->
+  <section class="bg-[#fafafa] border-y border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="mb-10 sm:mb-12" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">The Right Sequence</p>
+        <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] max-w-2xl">
+          Structure first. AI second.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6" data-reveal-group>
+        {[
+          {
+            step: "First",
+            title: "Fix the structure",
+            body: "Close the structural leaks in your revenue journey. Get the motion working cleanly — right ICP, right handoffs, right conversion architecture, right expansion motion.",
+            color: "#2563eb",
+            icon: "rebuild"
+          },
+          {
+            step: "Then",
+            title: "Instrument it",
+            body: "Build the metrics and feedback loops that let you see what's working. You need visibility into the motion before you automate it — otherwise you're flying blind at speed.",
+            color: "#7c3aed",
+            icon: "chart"
+          },
+          {
+            step: "Now",
+            title: "Accelerate with AI",
+            body: "Layer AI tools on top of a clean, instrumented motion. Now you're accelerating something that works — personalization, scale, efficiency. That's when AI delivers real leverage.",
+            color: "#059669",
+            icon: "trending-up"
+          },
+        ].map(item => (
+          <div class="card-ring rounded-[10px] p-6 sm:p-7 bg-white">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="icon-ring" style={`background: ${item.color}12; color: ${item.color};`}>
+                <Icon name={item.icon} size={18} />
+              </div>
+              <span class="text-[11px] font-medium uppercase tracking-[0.08em]" style={`color: ${item.color};`}>{item.step}</span>
+            </div>
+            <h3 class="text-[18px] sm:text-[20px] font-semibold tracking-[-0.02em] text-[#171717] mb-3">{item.title}</h3>
+            <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Where John fits -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="max-w-3xl" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-5">Where John Fits</p>
+        <h2 class="text-[26px] sm:text-[32px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] mb-6">
+          He helps you get the motion right before you accelerate it
+        </h2>
+        <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-5">
+          John works with companies that are about to invest in AI tools — or already have —
+          and want to make sure the underlying revenue motion is clean before they scale it.
+        </p>
+        <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-8">
+          He also works with companies where AI adoption has accelerated a broken motion —
+          and the problems are now bigger and moving faster. Structural diagnosis before you
+          spend another dollar on tools that sit on top of the leak.
+        </p>
+        <a
+          href="/book"
+          class="inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-[#171717] text-white text-[14px] font-medium rounded-[6px] hover:bg-[#2a2a2a] transition-colors"
+        >
+          Talk about your AI strategy
+          <Icon name="arrow-right" size={14} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

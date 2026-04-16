@@ -1,0 +1,576 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Layout
+  title="Revenue Journey Redesign"
+  description="Fix the structural leaks in your revenue journey. John Westley helps B2B companies find where revenue gets stuck, lost, or missed — then redesigns the right parts in the right order."
+>
+  <Nav dark={true} />
+
+  <!-- Hero -->
+  <section class="relative min-h-screen bg-[#090e1a] flex items-center overflow-hidden">
+    <!-- Subtle grid background -->
+    <div class="absolute inset-0 opacity-[0.035]" style="background-image: linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px); background-size: 80px 80px;"></div>
+    <!-- Primary radial glow (animated) -->
+    <div class="hero-glow absolute top-1/3 left-1/2 w-[900px] h-[700px] rounded-full pointer-events-none" style="background: radial-gradient(ellipse, #2563eb 0%, transparent 65%);"></div>
+    <!-- Secondary accent glow -->
+    <div class="absolute top-2/3 left-1/4 w-[400px] h-[300px] rounded-full opacity-[0.04] pointer-events-none" style="background: radial-gradient(ellipse, #7c3aed 0%, transparent 70%);"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-20 sm:pt-32 sm:pb-24 w-full">
+      <div class="grid md:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-center">
+
+        <!-- Left: Copy -->
+        <div>
+          <!-- Eyebrow -->
+          <div class="hero-eyebrow inline-flex items-center gap-2 mb-6 sm:mb-8">
+            <div class="w-1.5 h-1.5 rounded-full bg-[#2563eb]"></div>
+            <span class="text-white/50 text-[12px] sm:text-[13px] font-medium tracking-[0.08em] uppercase">Revenue Journey Redesign</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-headline text-[36px] sm:text-[48px] md:text-[58px] lg:text-[62px] font-semibold leading-[1.05] tracking-[-0.03em] text-white mb-5 sm:mb-6">
+            You're not losing<br />
+            to competition.<br />
+            <span class="text-white/30">You're losing to structure.</span>
+          </h1>
+
+          <!-- Sub copy -->
+          <p class="hero-sub text-[16px] sm:text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-xl mb-8 sm:mb-10">
+            John Westley finds the structural gaps in your revenue journey — the places where
+            leads fall through, customers don't expand, and effort doesn't compound —
+            then fixes them in the right order.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-ctas flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a
+              href="/book"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#171717] text-[14px] font-medium rounded-[6px] hover:bg-white/90 transition-all"
+            >
+              Book a Conversation
+              <Icon name="arrow-right" size={14} />
+            </a>
+            <a
+              href="/the-problem"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-white/70 text-[14px] font-medium rounded-[6px] border border-white/10 hover:border-white/20 hover:text-white transition-all"
+            >
+              See what's breaking
+            </a>
+          </div>
+
+          <!-- Trust strip -->
+          <div class="hero-ctas flex flex-wrap gap-2 mt-6 sm:mt-8">
+            <span class="trust-badge">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M4 6l1.5 1.5 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Free · 45 min
+            </span>
+            <span class="trust-badge">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6l3 3 7-7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              B2B $3M–$50M
+            </span>
+            <span class="trust-badge">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="4" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 11c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              CRO · VP Sales · CEO
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Revenue journey leak diagram -->
+        <div class="hidden md:block hero-sub">
+          <div class="relative">
+            <div class="absolute inset-0 rounded-[16px] opacity-20" style="background: radial-gradient(ellipse at center, #2563eb 0%, transparent 70%); filter: blur(24px);"></div>
+            <div class="relative rounded-[16px] border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-8">
+              <p class="text-[11px] font-medium text-white/30 uppercase tracking-[0.1em] mb-6">Where revenue leaks</p>
+              <svg viewBox="0 0 320 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <rect x="80" y="0" width="160" height="44" rx="8" fill="rgba(37,99,235,0.15)" stroke="rgba(37,99,235,0.4)" stroke-width="1"/>
+                <text x="160" y="17" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="Geist Variable, sans-serif" font-weight="500">Awareness / Demand</text>
+                <text x="160" y="32" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="9" font-family="Geist Variable, sans-serif">100 leads enter</text>
+                <line x1="160" y1="44" x2="160" y2="68" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <circle cx="210" cy="56" r="14" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+                <text x="210" y="53" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-family="Geist Variable, sans-serif" font-weight="600">−28</text>
+                <text x="210" y="64" text-anchor="middle" fill="rgba(239,68,68,0.5)" font-size="7" font-family="Geist Variable, sans-serif">Broken Bridge</text>
+                <rect x="90" y="68" width="140" height="44" rx="8" fill="rgba(37,99,235,0.12)" stroke="rgba(37,99,235,0.3)" stroke-width="1"/>
+                <text x="160" y="85" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Geist Variable, sans-serif" font-weight="500">Pipeline</text>
+                <text x="160" y="100" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="9" font-family="Geist Variable, sans-serif">72 qualified</text>
+                <line x1="160" y1="112" x2="160" y2="136" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <circle cx="110" cy="124" r="14" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+                <text x="110" y="121" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-family="Geist Variable, sans-serif" font-weight="600">−31</text>
+                <text x="110" y="132" text-anchor="middle" fill="rgba(239,68,68,0.5)" font-size="7" font-family="Geist Variable, sans-serif">Conv. Drag</text>
+                <rect x="100" y="136" width="120" height="44" rx="8" fill="rgba(37,99,235,0.1)" stroke="rgba(37,99,235,0.25)" stroke-width="1"/>
+                <text x="160" y="153" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11" font-family="Geist Variable, sans-serif" font-weight="500">New Customers</text>
+                <text x="160" y="168" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-size="9" font-family="Geist Variable, sans-serif">41 closed</text>
+                <line x1="160" y1="180" x2="160" y2="204" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <circle cx="215" cy="192" r="14" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+                <text x="215" y="189" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-family="Geist Variable, sans-serif" font-weight="600">−18</text>
+                <text x="215" y="200" text-anchor="middle" fill="rgba(239,68,68,0.5)" font-size="7" font-family="Geist Variable, sans-serif">Leaky Bucket</text>
+                <rect x="108" y="204" width="104" height="44" rx="8" fill="rgba(37,99,235,0.08)" stroke="rgba(37,99,235,0.2)" stroke-width="1"/>
+                <text x="160" y="221" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11" font-family="Geist Variable, sans-serif" font-weight="500">Retained</text>
+                <text x="160" y="236" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-size="9" font-family="Geist Variable, sans-serif">23 active</text>
+                <line x1="160" y1="248" x2="160" y2="272" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <circle cx="108" cy="260" r="14" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+                <text x="108" y="257" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-family="Geist Variable, sans-serif" font-weight="600">−16</text>
+                <text x="108" y="268" text-anchor="middle" fill="rgba(239,68,68,0.5)" font-size="7" font-family="Geist Variable, sans-serif">Expansion Gap</text>
+                <rect x="116" y="272" width="88" height="44" rx="8" fill="rgba(37,99,235,0.06)" stroke="rgba(37,99,235,0.15)" stroke-width="1"/>
+                <text x="160" y="289" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="11" font-family="Geist Variable, sans-serif" font-weight="500">Expanding</text>
+                <text x="160" y="304" text-anchor="middle" fill="rgba(255,255,255,0.15)" font-size="9" font-family="Geist Variable, sans-serif">7 of 100</text>
+                <text x="160" y="348" text-anchor="middle" fill="rgba(239,68,68,0.6)" font-size="10" font-family="Geist Variable, sans-serif" font-weight="500">93 leads. Lost to structure.</text>
+                <text x="160" y="364" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-size="9" font-family="Geist Variable, sans-serif">Not to competition.</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
+      <div class="w-px h-12 bg-gradient-to-b from-transparent to-white/60"></div>
+    </div>
+  </section>
+
+  <!-- Metrics Bar -->
+  <section class="bg-white border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-8 sm:mb-10">Results from client engagements</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12" data-reveal-group>
+
+        <div data-counter class="opacity-0">
+          <div class="text-[36px] sm:text-[42px] md:text-[52px] font-semibold tracking-[-0.03em] text-[#171717] leading-none mb-2">$84M</div>
+          <div class="text-[12px] sm:text-[13px] text-[#888888] leading-snug">Revenue scaled from $6M — same team, redesigned journey</div>
+        </div>
+
+        <div data-counter class="opacity-0" style="animation-delay: 0.1s">
+          <div class="text-[36px] sm:text-[42px] md:text-[52px] font-semibold tracking-[-0.03em] text-[#171717] leading-none mb-2">117%</div>
+          <div class="text-[12px] sm:text-[13px] text-[#888888] leading-snug">Net Revenue Retention — existing customers expanding</div>
+        </div>
+
+        <div data-counter class="opacity-0" style="animation-delay: 0.2s">
+          <div class="text-[36px] sm:text-[42px] md:text-[52px] font-semibold tracking-[-0.03em] text-[#171717] leading-none mb-2">$3.5M</div>
+          <div class="text-[12px] sm:text-[13px] text-[#888888] leading-snug">Recovered in 6 months from structural fixes</div>
+        </div>
+
+        <div data-counter class="opacity-0" style="animation-delay: 0.3s">
+          <div class="text-[36px] sm:text-[42px] md:text-[52px] font-semibold tracking-[-0.03em] text-[#171717] leading-none mb-2">24%</div>
+          <div class="text-[12px] sm:text-[13px] text-[#888888] leading-snug">Unit sales increase without adding headcount</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Framing -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <div data-reveal>
+          <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-6">The Pattern</p>
+          <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] mb-6">
+            It's rarely a people problem.<br />It's a structural one.
+          </h2>
+          <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-6">
+            Most B2B revenue problems aren't caused by bad sales reps or weak marketing.
+            They're caused by structural gaps in the revenue journey — places where leads fall through,
+            customers don't expand, and effort doesn't convert.
+          </p>
+          <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-8">
+            The frustrating part: these leaks are invisible until you know exactly where to look.
+          </p>
+          <a href="/the-problem" class="inline-flex items-center gap-2 text-[14px] font-medium text-[#2563eb] hover:opacity-70 transition-opacity">
+            See what the leaks look like
+            <Icon name="arrow-right" size={14} />
+          </a>
+        </div>
+
+        <!-- Right: Signal Decay Visual -->
+        <div class="flex flex-col gap-5" data-reveal data-reveal-delay="120">
+          <div class="card-ring rounded-[12px] overflow-hidden bg-[#090e1a]">
+            <img
+              src="/images/signal-decay.png"
+              alt="Revenue signal degradation across the customer journey"
+              class="w-full block"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="text-[11px] text-white/25 text-center px-4 pb-4 tracking-[0.04em]">
+              Revenue signal degrades at every structural gap
+            </p>
+          </div>
+          <div class="card-ring rounded-[12px] p-5 sm:p-6 bg-white">
+            <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">Common symptoms</p>
+            <div class="flex flex-col gap-3">
+              {[
+                "Good pipeline, poor close rates",
+                "Customers not renewing or expanding",
+                "Sales cycle stretching without reason",
+                "Team working hard, results inconsistent",
+              ].map(symptom => (
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full bg-[#ef4444] mt-[7px] flex-shrink-0"></div>
+                  <span class="text-[13px] sm:text-[14px] text-[#4d4d4d]">{symptom}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Six Structural Taxes -->
+  <section class="bg-[#fafafa] border-y border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="mb-10 sm:mb-14" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">Why Revenue Gets Stuck</p>
+        <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] max-w-2xl">
+          The Six Structural Taxes on your revenue
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5" data-reveal-group>
+        {[
+          {
+            n: "01",
+            icon: "broken-bridge",
+            name: "The Broken Bridge",
+            symptom: "Marketing and sales don't connect",
+            detail: "Marketing generates interest. Sales doesn't know what to do with it. Leads fall through the gap — not because of poor effort, but structural misalignment."
+          },
+          {
+            n: "02",
+            icon: "leaky-bucket",
+            name: "The Leaky Bucket",
+            symptom: "Customers arrive but don't stay",
+            detail: "Acquisition works. Retention doesn't. You're filling the bucket while it drains — churn erodes the compounding growth that should be happening."
+          },
+          {
+            n: "03",
+            icon: "invisible-ceiling",
+            name: "The Invisible Ceiling",
+            symptom: "Growth stalls at the same threshold",
+            detail: "You hit a number and can't break past it. Not for lack of effort — but because the systems, processes, and team design weren't built for the next level."
+          },
+          {
+            n: "04",
+            icon: "expansion-gap",
+            name: "The Expansion Gap",
+            symptom: "Existing customers don't grow",
+            detail: "Your best revenue opportunity is inside your current customer base. Most companies have no systematic way to realize it — they're leaving expansion revenue on the table."
+          },
+          {
+            n: "05",
+            icon: "conversion-drag",
+            name: "The Conversion Drag",
+            symptom: "Pipeline moves slowly or stalls",
+            detail: "Qualified prospects exist. They just don't convert cleanly. The friction is in the process — the handoffs, the messaging, the decision support that isn't there."
+          },
+          {
+            n: "06",
+            icon: "misaligned-motion",
+            name: "The Misaligned Motion",
+            symptom: "Team effort doesn't compound",
+            detail: "Everyone is working hard. But marketing, sales, and CS are optimizing for different things. The sum is less than the parts — effort doesn't reinforce itself."
+          },
+        ].map(tax => (
+          <div class="tax-card card-ring rounded-[10px] p-6 sm:p-7 bg-white cursor-default">
+            <div class="flex items-start justify-between mb-5">
+              <div class="icon-ring">
+                <Icon name={tax.icon} size={20} />
+              </div>
+              <span class="text-[11px] font-medium text-[#cccccc] font-mono">{tax.n}</span>
+            </div>
+            <h3 class="text-[16px] sm:text-[18px] font-semibold tracking-[-0.02em] text-[#171717] mb-2">{tax.name}</h3>
+            <p class="text-[12px] sm:text-[13px] font-medium text-[#888888] mb-4">{tax.symptom}</p>
+            <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed">{tax.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 sm:mt-10" data-reveal data-reveal-delay="200">
+        <a href="/the-problem" class="inline-flex items-center gap-2 text-[14px] font-medium text-[#2563eb] hover:opacity-70 transition-opacity">
+          Understand the six taxes in depth
+          <Icon name="arrow-right" size={14} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="mb-10 sm:mb-14" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">How It Works</p>
+        <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] max-w-xl">
+          Fix the right thing, in the right order
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6 relative" data-reveal-group>
+        <!-- Connector line (desktop only) -->
+        <div class="hidden md:block absolute top-[52px] left-[calc(33.33%+16px)] right-[calc(33.33%+16px)] h-px bg-gradient-to-r from-[#2563eb]/30 to-[#2563eb]/10"></div>
+
+        {[
+          {
+            step: "1",
+            icon: "audit",
+            title: "Revenue Journey Audit",
+            body: "We map every stage of how revenue moves through your business. Not a generic framework — a diagnostic specific to your motion, team, and market.",
+            output: "A clear picture of where revenue is getting stuck"
+          },
+          {
+            step: "2",
+            icon: "diagnose",
+            title: "Structural Diagnosis",
+            body: "We identify which taxes are active, which are costing the most, and — critically — which ones to fix first. Sequence matters. Fixing the wrong thing first wastes time.",
+            output: "Prioritized list of structural changes needed"
+          },
+          {
+            step: "3",
+            icon: "rebuild",
+            title: "Redesign & Rebuild",
+            body: "We fix the structural problems — redesigning the processes, handoffs, and systems that are creating drag. Implementation support until the new motion holds.",
+            output: "Revenue journey that compounds, not leaks"
+          },
+        ].map(item => (
+          <div class="card-ring rounded-[10px] p-6 sm:p-7 bg-white relative">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="icon-ring" style="background: rgba(37,99,235,0.08);">
+                <Icon name={item.icon} size={20} />
+              </div>
+              <span class="text-[28px] sm:text-[32px] font-semibold tracking-[-0.03em] text-[#eeeeee] leading-none">{item.step}</span>
+            </div>
+            <h3 class="text-[16px] sm:text-[18px] font-semibold tracking-[-0.02em] text-[#171717] mb-3">{item.title}</h3>
+            <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed mb-6">{item.body}</p>
+            <div class="pt-4 border-t border-black/[0.06]">
+              <div class="flex items-start gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#2563eb] mt-[5px] flex-shrink-0"></div>
+                <span class="text-[12px] sm:text-[13px] text-[#4d4d4d]">{item.output}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 sm:mt-10 text-center" data-reveal data-reveal-delay="200">
+        <a href="/the-process" class="inline-flex items-center gap-2 text-[14px] font-medium text-[#2563eb] hover:opacity-70 transition-opacity">
+          See the full process
+          <Icon name="arrow-right" size={14} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="bg-[#090e1a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <div data-reveal>
+          <p class="text-[11px] sm:text-[12px] font-medium text-white/30 uppercase tracking-[0.1em] mb-6">About John Westley</p>
+          <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-white leading-[1.1] mb-6">
+            Built from the inside out
+          </h2>
+          <p class="text-[15px] sm:text-[16px] text-white/60 leading-relaxed mb-6">
+            John has led revenue in roles most consultants have only read about — CRO, VP Sales, VP Marketing, and CEO.
+            He's seen every version of this problem from every seat in the room.
+          </p>
+          <p class="text-[15px] sm:text-[16px] text-white/60 leading-relaxed mb-8">
+            He doesn't bring frameworks. He brings diagnosis — the kind that only comes from having owned the number.
+          </p>
+
+          <!-- Roles as compact badges -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            {["CRO", "VP Sales", "VP Marketing", "CEO"].map(role => (
+              <span class="trust-badge">{role}</span>
+            ))}
+          </div>
+
+          <a href="/about" class="inline-flex items-center gap-2 text-[14px] font-medium text-white/70 hover:text-white transition-colors">
+            Learn about John
+            <Icon name="arrow-right" size={14} />
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-5" data-reveal data-reveal-delay="120">
+          <!-- Photo -->
+          <div class="card-ring-dark rounded-[12px] overflow-hidden aspect-[4/3]">
+            <img
+              src="/images/john-westley.webp"
+              alt="John Westley, Founder of Growth That Holds"
+              class="w-full h-full object-cover object-top"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <!-- Quote card -->
+          <div class="card-ring-dark rounded-[12px] p-5 sm:p-6 bg-white/[0.04]">
+            <p class="text-[14px] sm:text-[15px] text-white/60 leading-relaxed italic mb-4">
+              "I've been in the seats most consultants only advise from. That changes what you see — and what you know to fix."
+            </p>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+              <div>
+                <p class="text-[14px] font-medium text-white">John Westley</p>
+                <p class="text-[12px] text-white/40">Founder, Growth That Holds</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Results / Case Studies -->
+  <section class="bg-[#fafafa] border-y border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="mb-10 sm:mb-14" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">What Changes</p>
+        <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] max-w-2xl">
+          The same structural problems. Different companies.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6" data-reveal-group>
+        {[
+          {
+            type: "B2B SaaS · $6M ARR",
+            problem: "Stuck at $6M for two years. Strong marketing, solid product. Pipeline was there — close rates weren't. Marketing and sales each blamed the other.",
+            finding: "The Broken Bridge + Invisible Ceiling",
+            result: "$84M revenue",
+            context: "Same team. Redesigned motion."
+          },
+          {
+            type: "B2B Services · $18M ARR",
+            problem: "Acquisition was working. NRR was at 87% and falling. Good customers were quietly leaving. No one owned the renewal or expansion conversation.",
+            finding: "The Leaky Bucket + Expansion Gap",
+            result: "$3.5M recovered",
+            context: "In six months. From one structural fix."
+          },
+          {
+            type: "Distribution · $22M ARR",
+            problem: "Deals were moving slowly and going dark in late stages. Sales reps were working harder than the numbers reflected. No conversion architecture.",
+            finding: "The Conversion Drag",
+            result: "24% unit sales lift",
+            context: "Without adding headcount."
+          },
+        ].map(cs => (
+          <div class="card-ring rounded-[10px] p-6 sm:p-7 bg-white flex flex-col">
+            <p class="text-[11px] font-medium text-[#888888] uppercase tracking-[0.08em] mb-5">{cs.type}</p>
+            <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed mb-5 flex-1">{cs.problem}</p>
+            <div class="border-t border-black/[0.06] pt-5 flex flex-col gap-4">
+              <div>
+                <p class="text-[11px] font-medium text-[#888888] uppercase tracking-[0.06em] mb-1">Structural tax found</p>
+                <p class="text-[13px] font-medium text-[#2563eb]">{cs.finding}</p>
+              </div>
+              <div>
+                <div class="text-[26px] sm:text-[28px] font-semibold tracking-[-0.03em] text-[#171717] leading-none mb-0.5">{cs.result}</div>
+                <div class="text-[12px] text-[#888888]">{cs.context}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Fit Check -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="mb-10 sm:mb-14 text-center" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">Is This For You?</p>
+        <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1]">
+          We work well together when...
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 sm:gap-8 max-w-4xl mx-auto" data-reveal-group>
+        <!-- Good fit -->
+        <div class="card-ring rounded-[10px] p-6 sm:p-8 bg-white">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-2 h-2 rounded-full bg-[#16a34a]"></div>
+            <p class="text-[12px] sm:text-[13px] font-semibold text-[#16a34a] uppercase tracking-[0.06em]">Good fit</p>
+          </div>
+          <div class="flex flex-col gap-3 sm:gap-4">
+            {[
+              "B2B company, $3M–$50M revenue",
+              "Revenue has plateaued or is harder to grow",
+              "You suspect structural problems, not just execution",
+              "You want diagnosis, not just a plan",
+              "Leadership is willing to change the motion",
+              "You've tried the obvious fixes already",
+            ].map(item => (
+              <div class="flex items-start gap-3">
+                <Icon name="check" size={16} class="flex-shrink-0 mt-0.5" />
+                <span class="text-[13px] sm:text-[14px] text-[#4d4d4d]">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Not a fit -->
+        <div class="card-ring rounded-[10px] p-6 sm:p-8 bg-white">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-2 h-2 rounded-full bg-[#dc2626]"></div>
+            <p class="text-[12px] sm:text-[13px] font-semibold text-[#dc2626] uppercase tracking-[0.06em]">Not a fit</p>
+          </div>
+          <div class="flex flex-col gap-3 sm:gap-4">
+            {[
+              "Pre-revenue or early validation stage",
+              "Looking for a fractional sales rep",
+              "Want someone to do the selling for you",
+              "Looking for a quick fix or a shortcut",
+              "Not willing to change how you operate",
+              "B2C, retail, or consumer products",
+            ].map(item => (
+              <div class="flex items-start gap-3">
+                <Icon name="x" size={16} class="flex-shrink-0 mt-0.5" />
+                <span class="text-[13px] sm:text-[14px] text-[#4d4d4d]">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#090e1a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
+      <div class="max-w-2xl mx-auto" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-white/30 uppercase tracking-[0.1em] mb-6">Start Here</p>
+        <h2 class="text-[32px] sm:text-[40px] md:text-[52px] font-semibold tracking-[-0.03em] text-white leading-[1.05] mb-6">
+          One honest conversation.<br />
+          <span class="text-white/40">That's where it starts.</span>
+        </h2>
+        <p class="text-[15px] sm:text-[16px] text-white/50 leading-relaxed mb-10">
+          If you're not sure whether you have a structural problem or something else —
+          that conversation will tell you. If we're not a fit, I'll tell you quickly.
+        </p>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-8">
+          <a
+            href="/book"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white text-[#171717] text-[14px] sm:text-[15px] font-medium rounded-[6px] hover:bg-white/90 transition-all"
+          >
+            Book a Conversation
+            <Icon name="arrow-right" size={14} />
+          </a>
+          <a
+            href="/about"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 text-white/60 text-[14px] sm:text-[15px] font-medium rounded-[6px] border border-white/10 hover:border-white/20 hover:text-white transition-all"
+          >
+            Learn about John
+          </a>
+        </div>
+        <p class="text-[12px] sm:text-[13px] text-white/30">Free · 45 minutes · No prep required</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

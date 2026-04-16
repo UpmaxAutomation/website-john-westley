@@ -1,0 +1,301 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Layout
+  title="How We Fix It"
+  description="A three-phase revenue journey redesign: audit, diagnose, rebuild. Fix the right structural problems in the right order."
+>
+  <Nav />
+
+  <!-- Page Hero -->
+  <section class="bg-[#090e1a] pt-28 sm:pt-32 pb-16 sm:pb-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-[1fr_280px] gap-12 lg:gap-16 items-end">
+        <div>
+          <p class="hero-eyebrow text-[11px] sm:text-[12px] font-medium text-white/30 uppercase tracking-[0.1em] mb-5">How We Fix It</p>
+          <h1 class="hero-headline text-[36px] sm:text-[48px] md:text-[60px] font-semibold tracking-[-0.03em] text-white leading-[1.05] max-w-3xl mb-6">
+            The right fix.<br />
+            <span class="text-white/35">In the right order.</span>
+          </h1>
+          <p class="hero-sub text-[16px] sm:text-[18px] text-white/60 leading-relaxed max-w-2xl">
+            Most revenue interventions fail not because the fix was wrong — but because it was applied
+            in the wrong order. We audit first, diagnose second, then rebuild with precision.
+          </p>
+        </div>
+        <!-- Phase markers -->
+        <div class="hero-ctas flex flex-col gap-3 pb-2">
+          {[
+            { n: "01", label: "Audit", sub: "Weeks 1–3", icon: "audit" },
+            { n: "02", label: "Diagnose", sub: "Weeks 3–5", icon: "diagnose" },
+            { n: "03", label: "Rebuild", sub: "Weeks 5–16", icon: "rebuild" },
+          ].map(phase => (
+            <div class="card-ring-dark rounded-[10px] px-5 py-4 flex items-center gap-4">
+              <div class="icon-ring-dark">
+                <Icon name={phase.icon} size={18} />
+              </div>
+              <div>
+                <div class="text-[15px] font-semibold text-white leading-none mb-0.5">{phase.label}</div>
+                <div class="text-[12px] text-white/30">{phase.sub}</div>
+              </div>
+              <span class="ml-auto text-[11px] font-mono font-medium text-white/15">{phase.n}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Principles -->
+  <section class="bg-[#fafafa] border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-16">
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6" data-reveal-group>
+        {[
+          {
+            label: "Principle 1",
+            title: "Diagnosis before prescription",
+            body: "We don't walk in with a framework. We walk in with questions. Every engagement starts with a thorough audit — because the right answer depends on what's actually broken."
+          },
+          {
+            label: "Principle 2",
+            title: "Sequence matters more than solutions",
+            body: "Fixing the conversion drag when the broken bridge is the real problem wastes months. We identify the right order of operations before any redesign work starts."
+          },
+          {
+            label: "Principle 3",
+            title: "Implementation over advice",
+            body: "The goal isn't a deck. It's a working revenue motion. We stay through implementation — until the new structure is holding and producing results."
+          },
+        ].map((item, i) => (
+          <div class="card-ring rounded-[10px] p-6 bg-white">
+            <p class="text-[11px] font-medium text-[#2563eb] uppercase tracking-[0.08em] mb-3">{item.label}</p>
+            <h3 class="text-[17px] font-semibold tracking-[-0.02em] text-[#171717] mb-3">{item.title}</h3>
+            <p class="text-[14px] text-[#4d4d4d] leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Phases -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="mb-10 sm:mb-14" data-reveal>
+        <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.1em] mb-4">The Engagement</p>
+        <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] max-w-xl">
+          Three phases. One clear outcome.
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-10 sm:gap-12">
+
+        <!-- Phase 1 -->
+        <div class="grid md:grid-cols-[100px_1fr] gap-6 sm:gap-8 items-start" data-reveal>
+          <div class="flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-0">
+            <div class="w-12 h-12 rounded-full bg-[#2563eb]/10 flex items-center justify-center flex-shrink-0">
+              <Icon name="audit" size={22} />
+            </div>
+            <div class="md:hidden text-left">
+              <p class="text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em]">Phase 1 · Weeks 1–3</p>
+            </div>
+            <div class="hidden md:block w-px bg-gradient-to-b from-[#2563eb]/20 to-transparent mt-3 ml-6" style="height: 40px;"></div>
+          </div>
+          <div class="card-ring rounded-[12px] p-6 sm:p-8 bg-white">
+            <h3 class="text-[22px] sm:text-[26px] font-semibold tracking-[-0.025em] text-[#171717] mb-2">Revenue Journey Audit</h3>
+            <p class="text-[14px] sm:text-[15px] font-medium text-[#888888] mb-5 sm:mb-6">Weeks 1–3</p>
+            <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-5 sm:mb-6">
+              We map the complete path revenue takes through your business — from first touch through
+              close, onboarding, adoption, expansion, and referral. Not as a generic model, but as
+              the specific motion your company runs.
+            </p>
+            <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-7 sm:mb-8">
+              We interview your team across every function. We look at your data — pipeline, conversion
+              rates, churn, expansion, NRR. We surface where the journey breaks down.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-5 sm:gap-4 pt-5 sm:pt-6 border-t border-black/[0.06]">
+              <div>
+                <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em] mb-3">What we look at</p>
+                <div class="flex flex-col gap-2">
+                  {["Funnel conversion rates", "Pipeline velocity", "Churn and expansion data", "Team structure and incentives", "ICP definition and execution", "Handoff quality at each stage"].map(i => (
+                    <div class="flex items-start gap-2">
+                      <div class="w-1.5 h-1.5 rounded-full bg-[#2563eb] mt-[6px] flex-shrink-0"></div>
+                      <span class="text-[13px] text-[#4d4d4d]">{i}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em] mb-3">Deliverable</p>
+                <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed">
+                  Full revenue journey map with identified friction points, conversion benchmarks,
+                  and a clear picture of where revenue is leaking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="grid md:grid-cols-[100px_1fr] gap-6 sm:gap-8 items-start" data-reveal>
+          <div class="flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-0">
+            <div class="w-12 h-12 rounded-full bg-[#7c3aed]/10 flex items-center justify-center flex-shrink-0">
+              <Icon name="diagnose" size={22} class="text-[#7c3aed]" />
+            </div>
+            <div class="md:hidden text-left">
+              <p class="text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em]">Phase 2 · Weeks 3–5</p>
+            </div>
+            <div class="hidden md:block w-px bg-gradient-to-b from-[#7c3aed]/20 to-transparent mt-3 ml-6" style="height: 40px;"></div>
+          </div>
+          <div class="card-ring rounded-[12px] p-6 sm:p-8 bg-white">
+            <h3 class="text-[22px] sm:text-[26px] font-semibold tracking-[-0.025em] text-[#171717] mb-2">Structural Diagnosis</h3>
+            <p class="text-[14px] sm:text-[15px] font-medium text-[#888888] mb-5 sm:mb-6">Weeks 3–5</p>
+            <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-5 sm:mb-6">
+              From the audit, we identify which of the six structural taxes are active in your business —
+              and more importantly, which ones are driving the most drag. Not all taxes are equal.
+              Some are small leaks. Some are the primary reason you've plateaued.
+            </p>
+            <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-7 sm:mb-8">
+              The diagnosis isn't just what's wrong. It's a prioritized sequence: which structural
+              problems to fix first, second, and third — because fixing the wrong one first can
+              actually make things worse.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-5 sm:gap-4 pt-5 sm:pt-6 border-t border-black/[0.06]">
+              <div>
+                <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em] mb-3">What we determine</p>
+                <div class="flex flex-col gap-2">
+                  {["Which taxes are active", "Cost of each structural leak", "Root cause vs. symptom", "Sequence of interventions", "Quick wins vs. deep fixes", "What not to touch yet"].map(i => (
+                    <div class="flex items-start gap-2">
+                      <div class="w-1.5 h-1.5 rounded-full bg-[#7c3aed] mt-[6px] flex-shrink-0"></div>
+                      <span class="text-[13px] text-[#4d4d4d]">{i}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em] mb-3">Deliverable</p>
+                <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed">
+                  Structural diagnosis report with prioritized intervention roadmap, cost-of-leak
+                  analysis, and sequenced redesign plan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="grid md:grid-cols-[100px_1fr] gap-6 sm:gap-8 items-start" data-reveal>
+          <div class="flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-0">
+            <div class="w-12 h-12 rounded-full bg-[#059669]/10 flex items-center justify-center flex-shrink-0">
+              <Icon name="rebuild" size={22} class="text-[#059669]" />
+            </div>
+            <div class="md:hidden text-left">
+              <p class="text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em]">Phase 3 · Weeks 5–16</p>
+            </div>
+          </div>
+          <div class="card-ring rounded-[12px] p-6 sm:p-8 bg-white">
+            <h3 class="text-[22px] sm:text-[26px] font-semibold tracking-[-0.025em] text-[#171717] mb-2">Redesign & Rebuild</h3>
+            <p class="text-[14px] sm:text-[15px] font-medium text-[#888888] mb-5 sm:mb-6">Weeks 5–16 (varies)</p>
+            <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-5 sm:mb-6">
+              We implement the structural changes — redesigning the processes, handoffs, playbooks,
+              and systems that are creating drag. This isn't consulting from a distance.
+              We're in the room, working with your team.
+            </p>
+            <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-7 sm:mb-8">
+              We stay through implementation until the new revenue motion is holding. That means
+              the new processes are running, the team is using them, and the metrics are moving.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-5 sm:gap-4 pt-5 sm:pt-6 border-t border-black/[0.06]">
+              <div>
+                <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em] mb-3">What we build</p>
+                <div class="flex flex-col gap-2">
+                  {["Revenue journey redesign", "Handoff playbooks", "Expansion motion", "Conversion architecture", "Team alignment structure", "Metrics and feedback loops"].map(i => (
+                    <div class="flex items-start gap-2">
+                      <div class="w-1.5 h-1.5 rounded-full bg-[#059669] mt-[6px] flex-shrink-0"></div>
+                      <span class="text-[13px] text-[#4d4d4d]">{i}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[11px] sm:text-[12px] font-medium text-[#888888] uppercase tracking-[0.08em] mb-3">Outcome</p>
+                <p class="text-[13px] sm:text-[14px] text-[#4d4d4d] leading-relaxed">
+                  A revenue motion that holds. Structural leaks closed. Team aligned.
+                  Growth that compounds instead of draining.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What this is not -->
+  <section class="bg-[#fafafa] border-y border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="grid md:grid-cols-2 gap-10 sm:gap-12 items-center">
+        <div data-reveal>
+          <h2 class="text-[26px] sm:text-[32px] font-semibold tracking-[-0.025em] text-[#171717] leading-[1.1] mb-6">
+            What this is not
+          </h2>
+          <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed mb-5">
+            This isn't a strategy deck that sits in a drawer. It isn't a framework you buy and implement yourself.
+            It isn't fractional sales — we're not here to run your pipeline.
+          </p>
+          <p class="text-[15px] sm:text-[16px] text-[#4d4d4d] leading-relaxed">
+            It's a structural intervention. We diagnose what's structurally broken, redesign it,
+            and implement alongside your team until the new motion holds.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3" data-reveal data-reveal-delay="120">
+          {[
+            { no: "Not a generic growth framework", yes: "Specific to your revenue motion" },
+            { no: "Not a deck and a handoff", yes: "Implementation through until it holds" },
+            { no: "Not fractional sales leadership", yes: "Structural redesign" },
+            { no: "Not a 30-day quick fix", yes: "The right fix in the right order" },
+          ].map(item => (
+            <div class="card-ring rounded-[8px] px-4 sm:px-5 py-4 bg-white grid grid-cols-2 gap-3 sm:gap-4">
+              <div class="flex items-center gap-2">
+                <Icon name="x" size={14} />
+                <span class="text-[12px] sm:text-[13px] text-[#888888] line-through">{item.no}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <Icon name="check" size={14} />
+                <span class="text-[12px] sm:text-[13px] font-medium text-[#171717]">{item.yes}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#090e1a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+      <div class="max-w-xl mx-auto" data-reveal>
+        <h2 class="text-[28px] sm:text-[36px] md:text-[44px] font-semibold tracking-[-0.03em] text-white leading-[1.05] mb-5">
+          Start with the conversation
+        </h2>
+        <p class="text-[15px] sm:text-[16px] text-white/50 leading-relaxed mb-8">
+          45 minutes. No prep required. You'll leave knowing whether you have a structural problem —
+          and if so, what the highest-leverage place to fix it is.
+        </p>
+        <a
+          href="/book"
+          class="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 bg-white text-[#171717] text-[14px] sm:text-[15px] font-medium rounded-[6px] hover:bg-white/90 transition-all"
+        >
+          Book a Conversation
+          <Icon name="arrow-right" size={14} />
+        </a>
+        <p class="text-[12px] sm:text-[13px] text-white/30 mt-4">Free · 45 minutes · No prep required</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

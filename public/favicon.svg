@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#090e1a"/>
+  <!-- G letter mark -->
+  <path d="M10 16 C10 11.58 13.58 8 18 8 C20.5 8 22.7 9.1 24.2 10.8 L21.5 13.5 C20.7 12.6 19.4 12 18 12 C15.79 12 14 13.79 14 16 C14 18.21 15.79 20 18 20 L18 17 L22 17 L22 24 C21 24.6 19.6 25 18 25 C13.58 25 10 21.42 10 16 Z" fill="white" fill-opacity="0.9"/>
+  <rect x="18" y="17" width="5" height="1.5" fill="#2563eb"/>
+</svg>
